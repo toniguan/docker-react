@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t tgdocker2019/docer-react -f Dockerfile.dev .
+
+script:
+  - docker run tgdocker2019/docer-react npm run test -- --coverage
